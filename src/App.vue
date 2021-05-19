@@ -9,16 +9,14 @@
 <script>
 import VirtualList from './components/virtual-list';
 import Item from './components/item';
-let items = [];
-const start = +new Date();
-console.log(start)
-for (let i = 0; i < 1000000; i++) {
-  items.push({
+const n = 100000;
+const items = new Array(n);
+for (let i = 0; i < n; i++) {
+  items[i] = {
     id: i,
     value: i
-  });
+  };
 }
-console.log(+new Date() - start)
 export default {
   name: 'App',
   components: {
@@ -37,6 +35,9 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+html, body, #app {
+  height: 100%;
+  width: 100%;
 }
 </style>
